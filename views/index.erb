@@ -1,0 +1,20 @@
+<h1> Welcome To The Library </h1>
+<% @authors.each do |author| %>
+  <p>
+    <a href="authors/<%=author.id %>">
+      <%= author.name %>
+    </a>
+    </p>
+<% end %>
+
+
+<form method="post" action="/authors">
+  <fieldset>
+    <label>Author Name</label>
+    <br>
+    <input name="name">
+    <br>
+    <br>
+    <input type="submit" value="Create New Author">
+  </fieldset>
+</form>

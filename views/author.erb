@@ -1,0 +1,31 @@
+<h1> <%= @author.name %>'s Books </h1>
+
+<ul>
+  <% @author.books.each do |book| %>
+    <li>
+      <a href="/books/<%= book.id %>">
+        <%= book.title %>
+      </a>
+    </li>
+  <% end %>
+</ul>
+
+
+<form method="post" action="/books">
+  <fieldset>
+    <input type="hidden" name="author_id" value="<%=@author.id %>" >
+    <label>Title</label>
+    <br>
+    <input name="title">
+    <br>
+    <label>Year Published</label>
+    <br>
+    <input name="year_published">
+    <br>
+    <br>
+    <label>Description</label>
+    <br>
+    <textarea name="description"></textarea>
+    <input type="submit" value="Create New Book">
+  </fieldset>
+</form>

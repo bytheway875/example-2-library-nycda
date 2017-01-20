@@ -1,0 +1,27 @@
+<h1> <%= @book.title %> </h1>
+
+<h3>
+  By:
+  <a href="/authors/<%=@book.author.id %>">
+    <%= @book.author.name %>
+  </a>
+</h3>
+
+<% if @book.year_published %>
+  <h4>
+    Published Year:
+    <%= @book.year_published %>
+  </h4>
+<% end %>
+
+<h4>Description</h4>
+
+<% if @book.description %>
+  <p>
+    <%= @book.description %>
+  </p>
+<% else %>
+    <p>
+      No description yet!
+    </p>
+<% end %>
