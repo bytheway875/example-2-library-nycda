@@ -33,6 +33,19 @@ get '/books/:id' do
   erb :book
 end
 
+get '/books/:id/edit' do
+  @book = Book.find(params[:id])
+  puts @book.inspect
+  erb :edit_book
+end
+
+post '/books/update' do
+  @book = Book.find(params[:id])
+  puts params.inspect
+  params.inspect
+  @book.update_attributes(params)
+  redirect to("/books/#{@book.id}")
+end
 
 
 

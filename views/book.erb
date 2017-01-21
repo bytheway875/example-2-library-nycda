@@ -25,3 +25,12 @@
       No description yet!
     </p>
 <% end %>
+
+<h4> Read? </h4>
+<% if @book.read %>
+  <p> Yes! </p>
+<% else %>
+  <p> No! </p>
+<% end %>
+
+<a href="/books/<%= @book.id %>/edit">Edit Book Info </a>
